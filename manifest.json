@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Video Downloader",
+  "version": "1.0",
+  "permissions": ["activeTab", "downloads"],
+  "host_permissions": [
+    "*://*.alibaba.com/*",
+    "*://*.trendyol.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Video Downloader"
+  },
+  "content_scripts": [{
+    "matches": [
+      "*://*.alibaba.com/*",
+      "*://*.trendyol.com/*"
+    ],
+    "js": ["content.js"]
+  }]
+}
